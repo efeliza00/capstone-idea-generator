@@ -1,5 +1,5 @@
 export const courses = [
-  // Education
+  // Undergraduate Education
   "Bachelor of Elementary Education",
   "Bachelor of Secondary Education - English",
   "Bachelor of Secondary Education - Filipino",
@@ -11,7 +11,7 @@ export const courses = [
   "Bachelor of Special Needs Education",
   "Bachelor of Technical-Vocational Teacher Education",
 
-  // Information Technology
+  // Undergraduate IT & Computer Studies
   "BS Information Technology",
   "BS Computer Science",
   "BS Information Systems",
@@ -20,7 +20,7 @@ export const courses = [
   "BS Multimedia Arts",
   "BS Cybersecurity",
 
-  // Engineering & Architecture
+  // Undergraduate Engineering & Architecture
   "BS Civil Engineering",
   "BS Mechanical Engineering",
   "BS Electrical Engineering",
@@ -31,7 +31,7 @@ export const courses = [
   "BS Geodetic Engineering",
   "BS Architecture",
 
-  // Health Sciences
+  // Undergraduate Health Sciences
   "BS Nursing",
   "BS Pharmacy",
   "BS Medical Technology",
@@ -42,7 +42,7 @@ export const courses = [
   "BS Nutrition and Dietetics",
   "BS Midwifery",
 
-  // Business & Management
+  // Undergraduate Business & Management
   "BS Business Administration - Marketing Management",
   "BS Business Administration - Financial Management",
   "BS Business Administration - Human Resource Management",
@@ -53,14 +53,14 @@ export const courses = [
   "BS Tourism Management",
   "BS Customs Administration",
 
-  // Agriculture, Fisheries & Environmental
+  // Undergraduate Agriculture, Fisheries & Environmental
   "BS Agriculture",
   "BS Fisheries",
   "BS Forestry",
   "BS Environmental Science",
   "BS Agricultural and Biosystems Engineering",
 
-  // Arts, Communication & Social Sciences
+  // Undergraduate Arts, Communication & Social Sciences
   "AB English Language Studies",
   "AB Communication",
   "AB Journalism",
@@ -71,8 +71,45 @@ export const courses = [
   "Bachelor of Fine Arts",
   "Bachelor of Performing Arts",
 
-  // Law & Public Safety
+  // Undergraduate Law & Public Safety
   "BS Criminology",
   "BS Public Administration",
   "BS Legal Management",
+
+  // Undergraduate Research and Development
+  "BS Research and Development",
+
+  // Master’s Courses
+  "Master of Education",
+  "Master of Arts in Education",
+  "Master of Science in Information Technology",
+  "Master of Science in Computer Science",
+  "Master of Engineering",
+  "Master of Business Administration",
+  "Master of Public Administration",
+  "Master of Science in Nursing",
+  "Master of Science in Health Administration",
+  "Master of Arts in Communication",
+  "Master of Science in Environmental Science",
+  "Master of Laws",
+
+  // Master’s Research and Development
+  "Master of Science in Research and Development",
+
+  // PhD Courses
+  "Doctor of Philosophy in Education",
+  "Doctor of Philosophy in Information Technology",
+  "Doctor of Philosophy in Computer Science",
+  "Doctor of Philosophy in Engineering",
+  "Doctor of Philosophy in Business Administration",
+  "Doctor of Philosophy in Public Administration",
+  "Doctor of Philosophy in Nursing",
+  "Doctor of Philosophy in Health Sciences",
+  "Doctor of Philosophy in Environmental Science",
+  "Doctor of Philosophy in Social Sciences",
+  "Doctor of Philosophy in Communication",
+  "Doctor of Philosophy in Law",
+
+  // PhD Research and Development
+  "Doctor of Philosophy in Research and Development",
 ];
