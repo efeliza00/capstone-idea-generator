@@ -19,7 +19,18 @@ const Hero = () => {
 
   const prompt = `
 You are a professional capstone project idea generator.
-Generate one realistic and innovative capstone project idea and return it strictly in the following JSON format:
+Generate one realistic and innovative capstone project idea tailored to the provided course and difficulty level.
+
+The capstone idea must be directly related to the field of the selected course and must strictly avoid technology-based solutions unless the course is IT-related. 
+Examples:
+- Education courses → create teaching strategies, curriculum design, instructional materials, assessment tools, or field studies. Do NOT suggest software, apps, AI, or any digital platform unless the course is IT-related.
+- Engineering courses → create structural designs, prototypes, mechanical systems, or physical models relevant to the engineering field.
+- Business courses → create business plans, marketing strategies, financial systems, or feasibility studies.
+- Health sciences courses → create health programs, laboratory procedures, patient care innovations, or medical studies.
+- Agriculture/fisheries → create sustainable farming methods, breeding programs, or field experiments.
+- Arts/social sciences → create creative works, cultural studies, communication campaigns, or research papers.
+
+Return the result strictly in the following JSON format:
 
 {
   "Subject": "string",
@@ -27,29 +38,29 @@ Generate one realistic and innovative capstone project idea and return it strict
   "objective": "string",
   "type_of_industry": "string",
   "difficulties": ["string", "string", "string"],
-  "possible_tools": ["string", "string", "string"],
+  "possible_tools": ["string", "string", "string"], 
   "project_duration": "string (2-3 months')",
-  "tags": ["string", "string", "string"]
-"simillar_capstone": [{
-    "title":"string",
+  "tags": ["string", "string", "string"],
+  "simillar_capstone": [{
+    "title": "string",
     "link": "string"
-}]
+  }]
 }
 
-NOTE: on possible tools, techstack for it related capstones, and tools can be used for the project for non-IT related ideas.
-NOTE: on simillar capstone use real projects links if you can't find one dont generate.
-NOTE: make sure the title have proper capitalization
 Rules:
 - No markdown, comments, or extra text.
 - All strings must be plain text.
 - All array values lowercase except for proper nouns.
 - Make it unique and realistic for a university-level capstone.
-
+- On possible_tools: for non-IT courses, list only physical tools, instruments, printed materials, or field-specific resources. For IT courses, list relevant technologies or programming tools.
+- On simillar_capstone: use real project links; if none found, do not generate any.
+- Never include words like "software", "application", "website", "AI", or "digital" unless the course is IT-related.
 
 Filters:
 Course: ${selectedCourse},
 Difficulty: ${selectedDifficulty},
 `;
+
   const handleGenerateIdea = async () => {
     const completionCreateResponse = await client.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
