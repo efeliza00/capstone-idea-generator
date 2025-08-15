@@ -11,12 +11,13 @@ import { useState } from "react";
 import { Select } from "@blueprintjs/select";
 import { courses } from "../../constants/courses";
 import CapstoneIdea from "../capstone-idea";
+import { AnimatePresence, motion } from "motion/react";
 
+const MotionCard = motion(Card);
 const Hero = () => {
   const [idea, setIdea] = useState();
   const [selectedCourse, setSelectedCourse] = useState();
   const [selectedDifficulty, setSelectedDifficulty] = useState();
-
   const prompt = `
 You are a professional capstone project idea generator.
 Generate one realistic and innovative capstone project idea tailored to the provided course and difficulty level.
@@ -89,15 +90,44 @@ Difficulty: ${selectedDifficulty},
   };
   return (
     <div className="container max-w-9/10 md:max-w-2/3 mx-auto my-26 flex items-center flex-col">
-      <h1 className="leading-7 font-extrabold  text-green-700  text-3xl md:!text-5xl">
+      <motion.h1
+        className={`leading-10 md:leading-none font-medium uppercase text-green-700  !m-0 !text-5xl md:!text-9xl`}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+            ease: "easeIn",
+          },
+        }}
+        viewport={{ once: true }}
+      >
         Capstone Idea Generator
-      </h1>
-      <p className="text-gray-400">Generate some ideas and start building.</p>
+      </motion.h1>
+      <motion.p
+        className="text-gray-400 text-xl md:text-2xl"
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.5,
+            ease: "easeIn",
+            delay: 0.5,
+          },
+        }}
+        viewport={{ once: true }}
+      >
+        Generate some ideas and start building.
+      </motion.p>
       <Button
         endIcon="clean"
         intent="success"
         onClick={handleGenerateIdea}
         variant="solid"
+        size="large"
+        className="!mt-10"
       >
         Generate
       </Button>
@@ -153,15 +183,29 @@ Difficulty: ${selectedDifficulty},
           </FormGroup>
         </div>
       </Card>
-      {idea ? (
-        <CapstoneIdea idea={idea} />
-      ) : (
-        <Card className="flex w-full h-40 items-center justify-center">
-          <h3 className="text-gray-400 text-2xl font-medium">
-            Your idea will be displayed here.
-          </h3>
-        </Card>
-      )}
+      <AnimatePresence>
+        {idea ? (
+          <CapstoneIdea idea={idea} />
+        ) : (
+          <MotionCard
+            className="flex w-full h-40 items-center justify-center"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.5,
+                ease: "easeIn",
+              },
+            }}
+            exit={{ opacity: 0 }}
+          >
+            <h3 className="text-gray-400 text-2xl font-medium">
+              Your idea will be displayed here.
+            </h3>
+          </MotionCard>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

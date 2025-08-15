@@ -1,10 +1,26 @@
 import { Card, CompoundTag } from "@blueprintjs/core";
 import { Tag } from "@blueprintjs/core";
 import { Time } from "@blueprintjs/icons";
+import { motion } from "motion/react";
 
+const MotionCard = motion(Card);
 const CapstoneIdea = ({ idea }) => {
   return (
-    <Card elevation={2} className="w-full h-full !space-y-2">
+    <MotionCard
+      key={idea.title}
+      elevation={2}
+      className="w-full h-full !space-y-2"
+      initial={{ opacity: 0, y: 10 }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.3,
+          ease: "easeIn",
+        },
+      }}
+      exit={{ opacity: 0 }}
+    >
       <h1 className="font-semibold">{idea.title}</h1>
       <ul className="flex items-center flex-wrap gap-2">
         {idea?.tags.map((tag) => (
@@ -62,7 +78,7 @@ const CapstoneIdea = ({ idea }) => {
           </article>
         </div>
       </div>
-    </Card>
+    </MotionCard>
   );
 };
 
