@@ -10,3 +10,7 @@
 :root {
   --pt-intent-primary: #32a467;
 }
+
+@theme {
+  --font-baskerville: "Baskervville", serif;
+}

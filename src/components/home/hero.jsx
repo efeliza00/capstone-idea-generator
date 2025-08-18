@@ -91,7 +91,7 @@ Difficulty: ${selectedDifficulty},
   return (
     <div className="container max-w-9/10 md:max-w-2/3 mx-auto my-26 flex items-center flex-col">
       <motion.h1
-        className={`leading-10 md:leading-none font-medium uppercase text-green-700  !m-0 !text-5xl md:!text-9xl`}
+        className={`leading-10 md:leading-none font-baskerville font-medium uppercase text-green-700  !m-0 !text-5xl md:!text-9xl`}
         initial={{ opacity: 0, y: 10 }}
         whileInView={{
           opacity: 1,
@@ -106,7 +106,7 @@ Difficulty: ${selectedDifficulty},
         Capstone Idea Generator
       </motion.h1>
       <motion.p
-        className="text-gray-400 text-xl md:text-2xl"
+        className="text-gray-400 font-baskerville text-xl md:text-2xl"
         initial={{ opacity: 0, y: 10 }}
         whileInView={{
           opacity: 1,
